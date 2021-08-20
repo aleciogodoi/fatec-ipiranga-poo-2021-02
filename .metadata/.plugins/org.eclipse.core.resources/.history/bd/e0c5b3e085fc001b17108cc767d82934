@@ -1,0 +1,14 @@
+
+public class ExemploArray {
+
+	public static void main(String[] args) {
+		String[] nomes = {"Pedro","Maria","Ana","Beatriz"};
+		System.out.println(nomes[0]);
+		System.out.println(nomes[1]);
+		System.out.println(nomes[2]);
+		System.out.println(nomes[3]);
+		
+
+	}
+
+}

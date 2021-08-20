@@ -1,0 +1,15 @@
+
+public class ExemploArray3 {
+
+	public static void main(String[] args) {
+		
+		String[][] tabuleiro = 
+		{
+			{"X", "O",	"X"},
+			{".", "O",	"."},
+			{"O", "X",	"."}
+		};
+
+	}
+
+}

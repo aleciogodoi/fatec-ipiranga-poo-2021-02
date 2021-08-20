@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class JogoDaVelha {
+
+	public static void main(String[] args) {
+	    Scanner meuScanner = new Scanner(System.in);  // Cria um objeto Scanner
+
+		String[][] tabuleiro = 
+		{
+			{".", ".", "."},
+			{".", ".", "."},
+			{".", ".", "."}
+		};
+
+
+	}
+
+}

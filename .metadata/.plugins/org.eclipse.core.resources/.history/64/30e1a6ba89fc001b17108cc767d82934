@@ -1,0 +1,7 @@
+
+public class ExemploArray2 {
+	public static void main(String[] args) {
+		int[] inteiros = new int[20];
+
+	}
+}

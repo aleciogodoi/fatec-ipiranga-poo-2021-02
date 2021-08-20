@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class JogoDaVelha {
+
+	static String[][] tabuleiro = 
+	{
+		{".", ".", "."},
+		{".", ".", "."},
+		{".", ".", "."}
+	};
+
+	public static void main(String[] args) {
+	}
+	
+	public static void entradaDados() {
+	    int linha, coluna;
+	    Scanner meuScanner = new Scanner(System.in);  // Cria um objeto Scanner
+
+	    System.out.print("Digite nr. linha (0 a 2): ");
+	    linha = meuScanner.nextInt();
+	    System.out.print("Digite nr. coluna (0 a 2): ");
+	    coluna = meuScanner.nextInt();
+	    
+	    tabuleiro[linha][coluna]= "X";
+	}
+
+}
