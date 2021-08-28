@@ -18,4 +18,14 @@ public class Aluno {
 		this.nota2 = nota2;
 		this.notaReavaliacao = notaReavaliacao;
 	}
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", matricula=" + matricula + ", nota1=" + nota1 + ", nota2=" + nota2
+				+ ", notaReavaliacao=" + notaReavaliacao + ", Média=" + calcularMedia() + "]";
+	}
+	
+	public double calcularMedia() {
+		return ( nota1 + nota2 ) / 2;
+	}
+
 }
