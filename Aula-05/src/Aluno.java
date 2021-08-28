@@ -20,12 +20,19 @@ public class Aluno {
 	}
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", matricula=" + matricula + ", nota1=" + nota1 + ", nota2=" + nota2
-				+ ", notaReavaliacao=" + notaReavaliacao + ", Média=" + calcularMedia() + "]";
+		return "Aluno [Nome=" + nome + ", Matricula=" + matricula + ", Nota1=" + nota1 + ", Nota2=" + nota2
+				+ ", Nota Reavaliação=" + notaReavaliacao + ", Média=" + calcularMedia()
+				+ ", Média Final=" + calcularMediaFinal() + "]";
 	}
 	
 	public double calcularMedia() {
 		return ( nota1 + nota2 ) / 2;
 	}
-
+	
+	public double calcularMediaFinal() {
+		if (calcularMedia() >= 6)
+			return calcularMedia();
+		else
+			return ( calcularMedia() + notaReavaliacao ) / 2;
+	}
 }
