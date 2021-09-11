@@ -16,5 +16,8 @@ public class Main {
 		
 		Professor prof01 = new Professor("1212121", "Beatriz", "09876541-09",new Data(10, 9, 1999));
 		System.out.println(prof01);
+		
+		Aluno aluno01 = new Aluno ("098712", 10, "Cristina", "09876543-11", new Data(1, 1, 2001));
+		System.out.println(aluno01);
 	}
 }
