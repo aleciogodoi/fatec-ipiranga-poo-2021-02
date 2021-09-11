@@ -13,5 +13,8 @@ public class Main {
 		System.out.println(p01);
 		System.out.println(p02);
 		System.out.println("Nome:"+p01.getNome()+", Data Nascimento: "+p01.getDtNascimento());
+		
+		Professor prof01 = new Professor("1212121", "Beatriz", "09876541-09",new Data(10, 9, 1999));
+		System.out.println(prof01);
 	}
 }

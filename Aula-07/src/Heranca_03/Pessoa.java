@@ -4,6 +4,7 @@ public class Pessoa {
 	private String nome;
 	private String identidade;
 	private Data dtNascimento;
+
 	//Construtor
 	public Pessoa(String nome, String identidade, Data dtNascimento) {
 		this.nome = nome;
