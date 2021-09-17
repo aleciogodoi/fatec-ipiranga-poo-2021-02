@@ -16,8 +16,11 @@ public class Main {
 		
 		Professor prof01 = new Professor("1212121", "Beatriz", "09876541-09",new Data(10, 9, 1999));
 		System.out.println(prof01);
-		
+
 		Aluno aluno01 = new Aluno ("098712", 10, "Cristina", "09876543-11", new Data(1, 1, 2001));
 		System.out.println(aluno01);
+		
+		Funcionario func01 = new Funcionario ("Cristina", "032122", new Data(1, 1, 1990), new Data(5, 7, 2015), 15932.76f );
+		System.out.println(func01);
 	}
 }
