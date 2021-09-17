@@ -19,8 +19,12 @@ public class Main {
 
 		Aluno aluno01 = new Aluno ("098712", 10, "Cristina", "09876543-11", new Data(1, 1, 2001));
 		System.out.println(aluno01);
-		
-		Funcionario func01 = new Funcionario ("Cristina", "032122", new Data(1, 1, 1990), new Data(5, 7, 2015), 15932.76f );
+
+		Funcionario func01 = new Funcionario ("Cristina", "032122", new Data(1, 1, 1990), new Data(5, 7, 2015), 5932.76f );
 		System.out.println(func01);
+		
+		Gerente ger01 = new Gerente ("Claudia", "77779-05", new Data(18, 10, 1982)
+									, new Data(13, 9, 2015), 15932.76f, "TI", new Data(13, 9, 2018)  );
+		System.out.println(ger01);
 	}
 }
