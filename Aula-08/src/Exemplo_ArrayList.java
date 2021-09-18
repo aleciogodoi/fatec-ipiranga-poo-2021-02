@@ -25,9 +25,20 @@ public class Exemplo_ArrayList {
 				}
 				case 2: {
 					imprimir(carros);
+					break;
 				}
-				case 3:
-				case 4: 
+				case 3: {
+					int indice = carros.indexOf(entradaCarro());
+					if (indice != -1)
+						carros.remove(indice);
+					else
+						System.out.println("Carro não encontrado!!!");
+					break;
+				}
+				case 4: {
+					carros.clear();
+					break;
+				}
 			}
 		} while (opcao !=0 );
 		System.out.println("\nFIM");
