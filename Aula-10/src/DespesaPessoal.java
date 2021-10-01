@@ -68,7 +68,15 @@ public class DespesaPessoal {
 	}
 	
 	public void imprime(int mes, int ano) {
-		
+		System.out.println("\n---------------------------------------------------------------");
+		System.out.println("Despesas CPF: "+this.cpf +" - Total "+mes+"/"+ano);
+		System.out.println("---------------------------------------------------------------");
+		for (Despesa despesa: despesas) {
+			if (mes == despesa.getData().getMonthValue() && ano == despesa.getData().getYear())
+				System.out.println(despesa.getData()+", "+ despesa.getDescDespesa() + ", "+despesa.getValor());
+		}		
+		System.out.println("---------------------------------------------------------------");
+		System.out.println("Total: "+this.getTotal(mes, ano));
 	}
 	
 	public void imprime(LocalDate data) {
