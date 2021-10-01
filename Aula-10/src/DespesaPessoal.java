@@ -48,7 +48,12 @@ public class DespesaPessoal {
 	}
 	
 	public double getTotal(LocalDate data) {
-		return 0;
+		double total=0;
+		for (Despesa despesa: despesas) {
+			if (despesa.getData().equals(data))
+				total += despesa.getValor();
+		}
+		return total;
 	}
 
 	public void imprime() {
