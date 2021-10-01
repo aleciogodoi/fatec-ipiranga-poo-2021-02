@@ -32,11 +32,19 @@ public class DespesaPessoal {
 	}
 
 	public double getTotal() {
-		return 0;
+		double total=0;
+		for (Despesa despesa: despesas) 
+			total += despesa.getValor();
+		return total;
 	}
 
 	public double getTotal(int mes, int ano) {
-		return 0;
+		double total=0;
+		for (Despesa despesa: despesas) {
+			if (mes == despesa.getData().getMonthValue() && ano == despesa.getData().getYear())
+				total += despesa.getValor();
+		}
+		return total;
 	}
 	
 	public double getTotal(LocalDate data) {
