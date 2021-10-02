@@ -20,7 +20,8 @@ public class Main {
 		System.out.println("Total 30/09/2021: "+dp01.getTotal(LocalDate.of(2021, 9, 30)) );
 		System.out.println("Total 01/10/2021: "+dp01.getTotal(LocalDate.of(2021, 10, 1)) );
 		dp01.imprime();	
-		dp01.imprime(9, 2021);
+		dp01.imprime(9, 2021);		
+		dp01.imprime(LocalDate.of(2021,9,29));
 		
 	}
 }
