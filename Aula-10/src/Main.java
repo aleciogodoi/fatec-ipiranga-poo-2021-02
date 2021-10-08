@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -16,6 +17,8 @@ public class Main {
 		
 		System.out.print("\nCPF: ");
 		despesas = new DespesaPessoal(sc.nextLine());
+		
+		cargaInicial();
 
 		String menu= "\nControle despesas CPF: "+despesas.getCpf()+"\n"
 				+ "Escolha uma das Opções:\n"
@@ -69,6 +72,7 @@ public class Main {
 		} while(opcao!=0);
 		
 		System.out.println("F I M");
+		sc.close();
 	}
 	
 	public static void entradaDespesas() {
@@ -95,5 +99,35 @@ public class Main {
 	public static void entradaAno() {
 		System.out.print("\nAno: ");
 		ano = sc.nextInt();		
+	}
+	
+	public static void cargaInicial() {
+		// Despesas
+		String[] d = {	"Mercado", "Feira", "Luz", "Água", 
+						"Celular", "Internet", "Transporte", 
+						"Padaria", "Farmacia", "Gás", "Farmácia" };
+		
+		// Anos
+		int[] ano = {2019, 2020, 2021};
+		
+		// Gerador de números aleatórios
+		Random rnd = new Random();
+		
+		int indiceSorteadoDespesas, indiceSorteadoAno, diaSorteado, mesSorteado;
+		double valorSorteado;
+		for (int i = 1; i < 201; i++) {
+			
+			indiceSorteadoDespesas = rnd.nextInt(d.length);
+			indiceSorteadoAno = rnd.nextInt(ano.length);
+			diaSorteado = rnd.nextInt(28)+1;
+			mesSorteado = rnd.nextInt(12)+1;
+			valorSorteado = rnd.nextDouble()*100;
+			
+			despesas.getDespesas().add( new Despesa (
+			  LocalDate.of(ano[indiceSorteadoAno], mesSorteado, diaSorteado)
+			 ,d[indiceSorteadoDespesas]
+			 ,valorSorteado )
+			);
+		}
 	}
 }
