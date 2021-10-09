@@ -7,6 +7,7 @@ public abstract class Figura {
 		this.cor = cor;
 	}
 	
+	public abstract double area();
 	public abstract void draw();
 
 	public String getCor() {

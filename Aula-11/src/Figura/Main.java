@@ -8,12 +8,13 @@ public class Main {
 		ArrayList<Figura> figuras = new ArrayList<Figura>();
 		figuras.add(new Retangulo("azul", 5, 7));
 		figuras.add(new Quadrado("amarelo", 5));
+		figuras.add(new Triangulo("vermelho", 5, 9));
+		figuras.add(new Circulo("verde", 5));
 		
-		System.out.println(figuras.get(0));
-		figuras.get(0).draw();
-		
-		System.out.println(figuras.get(1));
-		figuras.get(1).draw();
+		for(Figura f: figuras) {
+			System.out.println(f);
+			f.draw();
+		}
 		
 	}
 
