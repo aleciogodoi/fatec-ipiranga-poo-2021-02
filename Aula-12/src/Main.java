@@ -13,6 +13,8 @@ public class Main {
 		Cachorro bidu = new Cachorro("Bidu","Vira-latas",3);
 		bidu.amamentar();
 		bidu.emitirSom();
+		bidu.brincar();
+		bidu.levarPassear();
 
 		Cavalo corcel = new Cavalo("Corcel");
 		corcel.amamentar();
