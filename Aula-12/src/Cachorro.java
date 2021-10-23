@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Cachorro extends Mamifero implements AnimalEstimacao {
+public class Cachorro extends Mamifero implements AnimalEstimacao, AnimalDomesticado {
 	private String raca;
 	private float tamanho;
 	
@@ -49,6 +49,16 @@ public class Cachorro extends Mamifero implements AnimalEstimacao {
 	@Override
 	public void levarPassear() {
 		System.out.println("Dando um role...");
+	}
+	
+	@Override
+	public void levarVeterinario() {
+		System.out.println("Indo tomar vacina...");
+	}
+
+	@Override
+	public void alimentar() {
+		System.out.println("Hora do rango!");
 	}
 
 }

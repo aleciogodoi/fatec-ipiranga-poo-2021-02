@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Gato extends Mamifero implements AnimalEstimacao {
+public class Gato extends Mamifero implements AnimalEstimacao, AnimalDomesticado {
 	private String raca;
 	
 	public Gato() {
@@ -40,6 +40,16 @@ public class Gato extends Mamifero implements AnimalEstimacao {
 	@Override
 	public void levarPassear() {
 		System.out.println("Estou dando uma voltinha...");
+	}
+
+	@Override
+	public void levarVeterinario() {
+		System.out.println("Visita ao médico...");
+	}
+
+	@Override
+	public void alimentar() {
+		System.out.println("Hora de comer!");
 	}
 
 }
