@@ -7,6 +7,8 @@ public class Main {
 		Gato bichano = new Gato("Bichano","Angora");
 		bichano.amamentar();
 		bichano.emitirSom();
+		bichano.brincar();
+		bichano.levarPassear();
 
 		Cachorro bidu = new Cachorro("Bidu","Vira-latas",3);
 		bidu.amamentar();
