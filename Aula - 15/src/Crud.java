@@ -21,10 +21,13 @@ public class Crud {
 				incluir();
 				break;
 			case 2:
+				pesquisar();
 				break;
 			case 3:
+				alterar();
 				break;
 			case 4:
+				excluir();
 				break;
 			case 5:
 				listar();
@@ -73,6 +76,33 @@ public class Crud {
 		}
 	}
 	
+	public static void pesquisar() {
+		conn = conexao.conectar();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Id Usuário: ");
+		idUsuario = sc.nextInt();
+		
+		String sql = "Select idUsuario,Nome,Email,Telefone,Endereco From Usuario Where idUsuario="+idUsuario;
+		try {
+			comandoSQL = conn.createStatement(); // Objeto para execução dos comandos SQL
+			ResultSet rs = comandoSQL.executeQuery(sql);  // Guardo os resultados em um Objeto Java ResultSet
+			System.out.println();
+			if (rs.next()) 
+				System.out.println(	 rs.getInt("idUsuario")+", "
+									+rs.getString("Nome")+", "
+									+rs.getString("Email")+", "
+									+rs.getString("Telefone")+", "
+									+rs.getString("Endereco") );
+			System.out.println();
+		} catch (SQLException ex) {
+			System.out.println("Problemas na Execução do comando: "+sql);
+			ex.printStackTrace();
+		} finally {
+			conexao.fechar(conn);
+		}
+	}
+	
 	public static void incluir() {
 		entrada();
 		String sql =  "Insert Into Usuario (idUsuario,Nome,Email,Telefone,Endereco)"
@@ -90,6 +120,47 @@ public class Crud {
 		}		
 	}
 
+
+	public static void alterar() {
+		conn = conexao.conectar();
+		
+		entrada();
+		
+		String sql = "Update Usuario Set "+
+				     "nome='"+nome+"',email='"+email+"',telefone='"+telefone+"',endereco='"+endereco+"'"
+				     	+" Where idUsuario="+idUsuario;
+		try {
+			System.out.println(sql);
+			comandoSQL = conn.createStatement(); // Objeto para execução dos comandos SQL
+			comandoSQL.executeUpdate(sql);  // Guardo os resultados em um Objeto Java ResultSet
+		} catch (SQLException ex) {
+			System.out.println("Problemas na Execução do comando: "+sql);
+			ex.printStackTrace();
+		} finally {
+			conexao.fechar(conn);
+		}		
+	}
+
+	public static void excluir() {
+		conn = conexao.conectar();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Id Usuário: ");
+		idUsuario = sc.nextInt();
+		
+		String sql = "Delete From Usuario Where idUsuario="+idUsuario;
+		try {
+			System.out.println(sql);
+			comandoSQL = conn.createStatement(); // Objeto para execução dos comandos SQL
+			comandoSQL.executeUpdate(sql);  // Guardo os resultados em um Objeto Java ResultSet
+		} catch (SQLException ex) {
+			System.out.println("Problemas na Execução do comando: "+sql);
+			ex.printStackTrace();
+		} finally {
+			conexao.fechar(conn);
+		}		
+	}
+	
 	public static void entrada() {
 		Scanner sc = new Scanner(System.in);
 
