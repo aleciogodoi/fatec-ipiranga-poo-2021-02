@@ -9,6 +9,8 @@ public class Crud {
 	private static Connection conn = null; // Objeto Connection do JAVA
 	private static Statement comandoSQL;   // Objeto Comandos SQL do JAVA
 	static Conexao conexao = new Conexao();
+	static int idUsuario=0;
+	static String nome="",email="",telefone="",endereco="";
 	
 	public static void main(String[] args) {	
 		int opcao=0;
@@ -55,13 +57,14 @@ public class Crud {
 		try {
 			comandoSQL = conn.createStatement(); // Objeto para execução dos comandos SQL
 			ResultSet rs = comandoSQL.executeQuery(sql);  // Guardo os resultados em um Objeto Java ResultSet
+			System.out.println();
 			while (rs.next()) 
 				System.out.println(	 rs.getInt("idUsuario")+", "
 									+rs.getString("Nome")+", "
 									+rs.getString("Email")+", "
 									+rs.getString("Telefone")+", "
 									+rs.getString("Endereco") );
-			
+			System.out.println();
 		} catch (SQLException ex) {
 			System.out.println("Problemas na Execução do comando: "+sql);
 			ex.printStackTrace();
@@ -71,7 +74,41 @@ public class Crud {
 	}
 	
 	public static void incluir() {
-		
+		entrada();
+		String sql =  "Insert Into Usuario (idUsuario,Nome,Email,Telefone,Endereco)"
+					+ " Values ("+idUsuario+",'"+nome+"','"+email+"','"+telefone+"','"+endereco+"')";
+		conn = conexao.conectar();
+		try {
+			System.out.println(sql);
+			comandoSQL = conn.createStatement(); // Objeto para execução dos comandos SQL
+			comandoSQL.executeUpdate(sql);  // Guardo os resultados em um Objeto Java ResultSet
+		} catch (SQLException ex) {
+			System.out.println("Problemas na Execução do comando: "+sql);
+			ex.printStackTrace();
+		} finally {
+			conexao.fechar(conn);
+		}		
 	}
 
+	public static void entrada() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Id Usuário: ");
+		idUsuario = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.print("Nome: ");
+		nome = sc.nextLine();
+		
+		System.out.print("Email: ");
+		email = sc.nextLine();
+		
+		System.out.print("Telefone: ");
+		telefone = sc.nextLine();
+		
+		System.out.print("Endereço: ");
+		endereco = sc.nextLine();
+		
+		System.out.println();
+	}
 }
